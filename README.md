@@ -1,50 +1,126 @@
-### credit-risk-classification
-Module 20 Challenge
+Background
+In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
 
-## Overview of the Analysis
-The purpose of this analysis is to leverage historical lending data from a peer-to-peer lending services company to build and evaluate a machine learning model that predicts loan risk. The dataset includes financial variables such as loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, and total debt, with the target variable (loan_status) indicating whether a loan is healthy (0) or high-risk (1).
+Before You Begin
+Create a new repository for this project called credit-risk-classification. Do not add this homework to an existing repository.
 
-To achieve my goal, I followed several important stages in the machine learning process:
+Clone the new repository to your computer.
 
-**Data Preparation**: I loaded the data, separated the features (X) from the target (y), and examined the imbalance in the loan_status variable.
+Inside your credit-risk-classification repository, create a folder titled "Credit_Risk."
 
-**Data Splitting**: The dataset was divided into training and testing sets using train_test_split to ensure consistency across multiple runs.
+Inside the "Credit_Risk" folder, add the credit_risk_classification.ipynb and lending_data.csv files found in the "Starter_Code.zip" file.
 
-**Model Training**: I built an initial logistic regression model using the original imbalanced data. Recognizing the imbalance (with many more healthy loans than high-risk ones), I then applied RandomOverSampler to create a balanced training set and trained a second logistic regression model.
+Push your changes to GitHub.
 
-**Model Evaluation**: Both models were evaluated using accuracy, precision, recall, and F1-score, with particular emphasis on the model’s ability to correctly identify both healthy and high-risk loans.
+Files
+Download the following files to help you get started:
 
-# Results
-Machine Learning Model 1 (Original Data):
+Module 20 Challenge filesLinks to an external site.
+Instructions
+The instructions for this Challenge are divided into the following subsections:
 
-**Healthy Loans (0)**:
-Precision: 100%
-Recall: 99%
-F1-Score: 1.00
+Split the Data into Training and Testing Sets
 
-**High-Risk Loans (1)**:
-Precision: 85%
-Recall: 94%
-F1-Score: 0.90
+Create a Logistic Regression Model with the Original Data
 
-**Overall Accuracy**: ~99%
-(Note: Due to the imbalanced nature of the original data, the balanced accuracy score was lower at around 95%.)
+Write a Credit Risk Analysis Report
 
-Machine Learning Model 2 (Oversampled Data):
+Split the Data into Training and Testing Sets
+Open the starter code notebook and use it to complete the following steps:
 
-**Healthy Loans (0)**:
-Precision: 100%
-Recall: 99%
-F1-Score: 1.00
+Read the lending_data.csv data from the Resources folder into a Pandas DataFrame.
 
-**High-Risk Loans (1)**:
-Precision: 99%
-Recall: 99%
-F1-Score: 0.99
+Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns.
 
-Overall Accuracy & Balanced Accuracy: 99%
+note
+A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting.
 
-# Summary
-Both models demonstrate strong overall accuracy; however, their performance differs when focusing on the prediction of high-risk loans. The first model, trained on the original imbalanced data, performs exceptionally well for healthy loans but shows moderate performance for high-risk loans, as shown by a precision of 85% and an F1-score of 0.90 for class 1. On the other hand, the second model, which was trained on sampled (balanced) data, improves the prediction of high-risk loans significantly, achieving precision and recall of around 99% for both classes.
+Split the data into training and testing datasets by using train_test_split.
 
-Given the cost for both false positives (misclassifying a healthy loan as high-risk) and false negatives (overlooking a high-risk loan), accurate prediction of high-risk loans is critical. Therefore, based on these results, the logistic regression model built on oversampled data is recommended as the best model for predicting loan risk.
+Create a Logistic Regression Model with the Original Data
+Use your knowledge of logistic regression to complete the following steps:
+
+Fit a logistic regression model by using the training data (X_train and y_train).
+
+Save the predictions for the testing data labels by using the testing feature data (X_test) and the fitted model.
+
+Evaluate the model’s performance by doing the following:
+
+Generate a confusion matrix.
+
+Print the classification report.
+
+Answer the following question: How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels?
+
+Write a Credit Risk Analysis Report
+Write a brief report that includes a summary and analysis of the performance of the machine learning models that you used in this homework. You should write this report as the README.md file included in your GitHub repository.
+
+Structure your report by using the report template that Starter_Code.zip includes, ensuring that it contains the following:
+
+An overview of the analysis: Explain the purpose of this analysis.
+
+The results: Using a bulleted list, describe the accuracy score, the precision score, and recall score of the machine learning model.
+
+A summary: Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning.
+
+Requirements
+Split the Data into Training and Testing Sets (30 points)
+To receive all points, you must:
+
+Read the lending_data.csv data from the Resources folder into a Pandas DataFrame. (5 points)
+
+Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns. (10 points)
+
+Split the data into training and testing datasets by using train_test_split. (15 points)
+
+Create a Logistic Regression Model (30 points)
+To receive all points, you must:
+
+Fit a logistic regression model by using the training data (X_train and y_train). (10 points)
+
+Save the predictions on the testing data labels by using the testing feature data (X_test) and the fitted model. (5 points)
+
+Evaluate the model’s performance by doing the following:
+
+Generate a confusion matrix. (5 points)
+
+Generate a classification report. (5 points)
+
+Answer the following question: How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels? (5 points)
+
+Write a Credit Risk Analysis Report (20 points)
+To receive all points, you must:
+
+Provide an overview that explains the purpose of this analysis. (5 points)
+
+Using a bulleted list, describe the accuracy, precision, and recall scores of the machine learning model. (5 points)
+
+Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning. (10 points)
+
+Coding Conventions and Formatting (10 points)
+To receive all points, you must:
+
+Place imports at the top of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
+
+Name functions and variables with lowercase characters, with words separated by underscores. (2 points)
+
+Follow DRY (Don’t Repeat Yourself) principles, creating maintainable and reusable code. (3 points)
+
+Use concise logic and creative engineering where possible. (2 points)
+
+Code Comments (10 points)
+To receive all points, your code must:
+
+Be well commented with concise, relevant notes that other developers can understand. (10 points)
+Grading
+This project will be evaluated against the requirements and assigned a grade according to the following table:
+
+Grade	Points
+A (+/-)	90+
+B (+/-)	80–89
+C (+/-)	70–79
+D (+/-)	60–69
+F (+/-)	< 60
+Submission
+To submit your Challenge assignment, click Submit, and then provide the URL of your GitHub repository for grading.
+
